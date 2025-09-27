@@ -1,0 +1,212 @@
+
+
+DB:midmarks_db
+ CREATE TABLE questionco (
+    qcBatchYear VARCHAR(10) NOT NULL,
+    qcSubjectId VARCHAR(20) NOT NULL,
+    qcMid VARCHAR(10) NOT NULL,
+    qcSem VARCHAR(10) NOT NULL,
+    qcYear VARCHAR(10) NOT NULL,
+
+    co_obj_1 VARCHAR(10),
+    co_obj_2 VARCHAR(10),
+    co_obj_3 VARCHAR(10),
+
+    co_ass_1 VARCHAR(10),
+    co_ass_2 VARCHAR(10),
+    co_ass_3 VARCHAR(10),
+
+    co_1a VARCHAR(10),
+    co_1b VARCHAR(10),
+    co_1c VARCHAR(10),
+    co_1d VARCHAR(10),
+
+    co_2a VARCHAR(10),
+    co_2b VARCHAR(10),
+    co_2c VARCHAR(10),
+    co_2d VARCHAR(10),
+
+    co_3a VARCHAR(10),
+    co_3b VARCHAR(10),
+    co_3c VARCHAR(10),
+    co_3d VARCHAR(10),
+
+    co_4a VARCHAR(10),
+    co_4b VARCHAR(10),
+    co_4c VARCHAR(10),
+    co_4d VARCHAR(10),
+
+    co_5a VARCHAR(10),
+    co_5b VARCHAR(10),
+    co_5c VARCHAR(10),
+    co_5d VARCHAR(10),
+
+    co_6a VARCHAR(10),
+    co_6b VARCHAR(10),
+    co_6c VARCHAR(10),
+    co_6d VARCHAR(10),
+
+    
+);
+ CREATE TABLE questionmaxmarks (
+    qmmBatchYear VARCHAR(10) NOT NULL,
+    qmmSubjectId VARCHAR(20) NOT NULL,
+    qmmMid VARCHAR(10) NOT NULL,
+    qmmSem VARCHAR(10) NOT NULL,
+    qmmYear VARCHAR(10) NOT NULL,
+
+    max_obj_1 INT DEFAULT 0,
+    max_obj_2 INT DEFAULT 0,
+    max_obj_3 INT DEFAULT 0,
+
+    max_ass_1 INT DEFAULT 0,
+    max_ass_2 INT DEFAULT 0,
+    max_ass_3 INT DEFAULT 0,
+
+    max_1a INT DEFAULT 0,
+    max_1b INT DEFAULT 0,
+    max_1c INT DEFAULT 0,
+    max_1d INT DEFAULT 0,
+
+    max_2a INT DEFAULT 0,
+    max_2b INT DEFAULT 0,
+    max_2c INT DEFAULT 0,
+    max_2d INT DEFAULT 0,
+
+    max_3a INT DEFAULT 0,
+    max_3b INT DEFAULT 0,
+    max_3c INT DEFAULT 0,
+    max_3d INT DEFAULT 0,
+
+    max_4a INT DEFAULT 0,
+    max_4b INT DEFAULT 0,
+    max_4c INT DEFAULT 0,
+    max_4d INT DEFAULT 0,
+
+    max_5a INT DEFAULT 0,
+    max_5b INT DEFAULT 0,
+    max_5c INT DEFAULT 0,
+    max_5d INT DEFAULT 0,
+
+    max_6a INT DEFAULT 0,
+    max_6b INT DEFAULT 0,
+    max_6c INT DEFAULT 0,
+    max_6d INT DEFAULT 0,
+
+  
+);
+
+
+CREATE TABLE questionlevels (
+    qlBatchYear VARCHAR(10) NOT NULL,
+    qlSubjectId VARCHAR(20) NOT NULL,
+    qlMid VARCHAR(10) NOT NULL,
+    qlSem VARCHAR(10) NOT NULL,
+    qlYear VARCHAR(10) NOT NULL,
+    level_1a VARCHAR(10),
+    level_1b VARCHAR(10),
+    level_1c VARCHAR(10),
+    level_1d VARCHAR(10),
+    level_2a VARCHAR(10),
+    level_2b VARCHAR(10),
+    level_2c VARCHAR(10),
+    level_2d VARCHAR(10),
+    level_3a VARCHAR(10),
+    level_3b VARCHAR(10),
+    level_3c VARCHAR(10),
+    level_3d VARCHAR(10),
+    level_4a VARCHAR(10),
+    level_4b VARCHAR(10),
+    level_4c VARCHAR(10),
+    level_4d VARCHAR(10),
+    level_5a VARCHAR(10),
+    level_5b VARCHAR(10),
+    level_5c VARCHAR(10),
+    level_5d VARCHAR(10),
+    level_6a VARCHAR(10),
+    level_6b VARCHAR(10),
+    level_6c VARCHAR(10),
+    level_6d VARCHAR(10),
+   
+)
+CREATE TABLE subjects (
+    subject_id VARCHAR(20) PRIMARY KEY,
+    subject_name VARCHAR(100),
+    sem INT(11),
+    year INT(11),
+    dept VARCHAR(50),
+    fid VARCHAR(20),
+    INDEX (fid)
+)
+
+
+
+CREATE TABLE faculty (
+    faculty_id VARCHAR(20) PRIMARY KEY,
+    faculty_name VARCHAR(100),
+    faculty_password VARCHAR(50),
+    faculty_department VARCHAR(50),
+    faculty_designation VARCHAR(50) NOT NULL DEFAULT 'Professor'
+)
+ CREATE TABLE studentdetails (
+    student_id VARCHAR(20) PRIMARY KEY,
+    student_name VARCHAR(100),
+    student_department VARCHAR(50),
+    stu_sem INT(11),
+    stu_year INT(11),
+    stu_batchyear INT(11)
+)
+
+
+CREATE TABLE studentmidmarks (
+    sid VARCHAR(20) NOT NULL,             -- Student ID
+    sname VARCHAR(100) NOT NULL,          -- Student Name
+    sub_id VARCHAR(20) NOT NULL,          -- Subject ID
+    student_sem VARCHAR(10) NOT NULL,     -- Semester
+    student_year VARCHAR(10) NOT NULL,    -- Year
+    sbatch_year VARCHAR(10) NOT NULL,     -- Batch Year
+    smmDepartment VARCHAR(50) NOT NULL,   -- Department
+    smmMid VARCHAR(10) NOT NULL,          -- Mid Exam (Mid1 / Mid2)
+
+    marks_obj_1 INT DEFAULT 0,
+    marks_obj_2 INT DEFAULT 0,
+    marks_obj_3 INT DEFAULT 0,
+
+    marks_ass_1 INT DEFAULT 0,
+    marks_ass_2 INT DEFAULT 0,
+    marks_ass_3 INT DEFAULT 0,
+
+    marks_1a INT DEFAULT 0,
+    marks_1b INT DEFAULT 0,
+    marks_1c INT DEFAULT 0,
+    marks_1d INT DEFAULT 0,
+
+    marks_2a INT DEFAULT 0,
+    marks_2b INT DEFAULT 0,
+    marks_2c INT DEFAULT 0,
+    marks_2d INT DEFAULT 0,
+
+    marks_3a INT DEFAULT 0,
+    marks_3b INT DEFAULT 0,
+    marks_3c INT DEFAULT 0,
+    marks_3d INT DEFAULT 0,
+
+    marks_4a INT DEFAULT 0,
+    marks_4b INT DEFAULT 0,
+    marks_4c INT DEFAULT 0,
+    marks_4d INT DEFAULT 0,
+
+    marks_5a INT DEFAULT 0,
+    marks_5b INT DEFAULT 0,
+    marks_5c INT DEFAULT 0,
+    marks_5d INT DEFAULT 0,
+
+    marks_6a INT DEFAULT 0,
+    marks_6b INT DEFAULT 0,
+    marks_6c INT DEFAULT 0,
+    marks_6d INT DEFAULT 0,
+
+    status VARCHAR(20) DEFAULT 'present', -- Attendance/Status
+
+    
+);
